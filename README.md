@@ -1,43 +1,51 @@
-# 🗂️ My Address Book
+# My Address Book
 
-## 📖 Deskripsi
-**My Address Book** adalah aplikasi sederhana untuk mengelola data kontak pribadi.  
-Aplikasi ini memungkinkan pengguna untuk **menambahkan**, **melihat**, **mengedit**, dan **menghapus** data kontak dengan mudah.
+## Deskripsi
 
-Tujuan dari proyek ini adalah untuk memahami dasar pembuatan aplikasi CRUD (Create, Read, Update, Delete) menggunakan antarmuka sederhana berbasis web.
+My Address Book adalah aplikasi sederhana untuk mengelola data kontak pribadi.  
+Aplikasi ini memungkinkan pengguna untuk menambahkan, melihat, mengedit, dan menghapus data kontak dengan mudah.
 
----
+Tujuan dari proyek ini adalah untuk memahami dasar pembuatan aplikasi CRUD berbasis web.
 
-## ⚙️ Fitur Utama
-- ➕ **Input Data:** Menambahkan data kontak baru (nama, nomor telepon, alamat, dll).  
-- 👁️ **Lihat Data:** Menampilkan seluruh data kontak yang sudah tersimpan.  
-- ✏️ **Edit Data:** Mengubah informasi kontak yang sudah ada.  
-- ❌ **Hapus Data:** Menghapus data kontak yang tidak diperlukan lagi.  
+Demo aplikasi:  
+https://vercel.com/taqwa-amni-ramadhans-projects/testabs
 
 ---
 
-## 🧰 Teknologi yang Digunakan
-- 🌐 **HTML** — untuk membuat struktur halaman web.  
-- 🎨 **CSS** — untuk memperindah tampilan antarmuka aplikasi.  
-- ⚙️ **JavaScript** — untuk mengatur logika program dan interaksi pengguna.  
+## Fitur Utama
+
+- Input Data: Menambahkan data kontak baru seperti nama, nomor telepon, dan alamat.
+- Lihat Data: Menampilkan seluruh data kontak yang tersimpan.
+- Edit Data: Mengubah informasi kontak yang sudah ada.
+- Hapus Data: Menghapus data kontak yang tidak diperlukan.
 
 ---
 
-## 📆 Proses Pengembangan
+## Teknologi yang Digunakan
 
-### 🗓️ Minggu 1
-- Membuat **README.md** untuk mendeskripsikan proyek.  
-- Mendesain **Flowchart sistem** untuk menggambarkan alur kerja aplikasi.  
+- HTML untuk struktur halaman.
+- CSS untuk tampilan antarmuka.
+- JavaScript untuk logika program dan interaksi pengguna.
 
 ---
 
-## 🧭 Flowchart
-Berikut merupakan alur sistem Address Book:
+## Proses Pengembangan
+
+### Minggu 1
+
+- Membuat README.md untuk mendeskripsikan proyek.
+- Mendesain flowchart sistem sebagai gambaran alur kerja aplikasi.
+
+---
+
+## Flowchart
 
 ![Flowchart System](images/fcabs.jpg)
 
 ---
 
-## 💡 Catatan
-Proyek ini dibuat untuk tujuan pembelajaran dalam memahami konsep dasar manajemen data dan logika program menggunakan CRUD sederhana berbasis web.
+## Catatan
+
+Proyek ini dibuat untuk tujuan pembelajaran dalam memahami dasar manajemen data dan logika program menggunakan CRUD sederhana berbasis web.
+
 # testabs
