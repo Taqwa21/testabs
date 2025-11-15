@@ -10,21 +10,101 @@
       const contacts = [
         {
           id: 1,
-          fullname: "Taqwa Amni Ramadhan",
-          phone: "0859102791881",
-          email: "taqwa.r1928@gmail.com",
-          location: "Jakarta",
-          notes: "Kontak pribadi",
+          fullname: "Kaoruko Waguri",
+          phone: "080111223344",
+          email: "kaoruko@anime.jp",
+          location: "Tokyo",
+          notes: "Karakter ceria dan penuh semangat",
           created_at: now,
           updated_at: now,
         },
         {
           id: 2,
-          fullname: "Hanabi Yasuraoka",
-          phone: "08019283917",
-          email: "HanaYasu@Kuzu.com",
-          location: "Jakarta",
-          notes: "Teman kampus",
+          fullname: "Satoru Gojo",
+          phone: "080900112233",
+          email: "gojo.satoru@jjk.jp",
+          location: "Shinjuku",
+          notes: "Instruktur sekolah jujutsu",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 3,
+          fullname: "Makima",
+          phone: "08055667788",
+          email: "makima@chainsaw.jp",
+          location: "Chiyoda",
+          notes: "Atasan yang misterius",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 4,
+          fullname: "Komi Shouko",
+          phone: "080777889900",
+          email: "komi.shouko@komisan.jp",
+          location: "Osaka",
+          notes: "Pendiam tapi populer",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 5,
+          fullname: "Hitori Bocchi",
+          phone: "08012341234",
+          email: "hitori.b@bocchi.jp",
+          location: "Kanagawa",
+          notes: "Sangat pemalu",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 6,
+          fullname: "Kirishima Eijiro",
+          phone: "08099887766",
+          email: "kirishima@ua.jp",
+          location: "Musutafu",
+          notes: "Hero trainee",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 7,
+          fullname: "Zero Two",
+          phone: "080777222333",
+          email: "zerotwo@darling.jp",
+          location: "Mistilteinn",
+          notes: "Partner misterius",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 8,
+          fullname: "Rengoku Kyojuro",
+          phone: "080112233445",
+          email: "rengoku@hashira.jp",
+          location: "Kyoto",
+          notes: "Api membara penuh semangat",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 9,
+          fullname: "Kurumi Tokisaki",
+          phone: "080667788990",
+          email: "kurumi@datealive.jp",
+          location: "Saitama",
+          notes: "Spirit berbahaya",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 10,
+          fullname: "Violet Evergarden",
+          phone: "080555444333",
+          email: "violet@leidenschaf.jp",
+          location: "Leiden",
+          notes: "Auto Memory Doll",
           created_at: now,
           updated_at: now,
         },
@@ -138,7 +218,6 @@
       return;
     }
 
-    // Tampilkan sebagai card responsif
     const grid = document.createElement("div");
     grid.className = "grid gap-4 sm:grid-cols-2 lg:grid-cols-3";
     filtered.forEach((contact) => {
@@ -159,19 +238,17 @@
 
       const actions = document.createElement("div");
       actions.className = "mt-4 flex gap-2";
-      // Detail
+
       const btnDetail = document.createElement("button");
       btnDetail.className = "px-3 py-1 border rounded text-sm";
       btnDetail.textContent = "Detail";
       btnDetail.addEventListener("click", () => showDetailModal(contact.id));
 
-      // Edit
       const btnEdit = document.createElement("a");
       btnEdit.className = "px-3 py-1 border rounded text-sm";
       btnEdit.textContent = "Edit";
       btnEdit.href = `edit.html?id=${encodeURIComponent(contact.id)}`;
 
-      // Hapus
       const btnDelete = document.createElement("button");
       btnDelete.className = "px-3 py-1 bg-red-600 text-white rounded text-sm";
       btnDelete.textContent = "Hapus";
@@ -202,7 +279,6 @@
     container.appendChild(grid);
   }
 
-  // Modal detail
   function showDetailModal(id) {
     const modal = document.getElementById("detailModal");
     const content = document.getElementById("detailContent");
@@ -257,7 +333,6 @@
     modal.style.display = "none";
   }
 
-  // Utilities
   function escapeHtml(s) {
     if (s === null || s === undefined) return "";
     return String(s)
@@ -272,7 +347,6 @@
     return String(s).replace(/\n/g, "<br>");
   }
 
-  // Eksport fungsi ke global supaya HTML lain bisa memanggil
   window.loadContacts = loadContacts;
   window.saveContacts = saveContacts;
   window.addContact = addContact;
