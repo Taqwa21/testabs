@@ -8,7 +8,7 @@ Aplikasi ini memungkinkan pengguna untuk menambahkan, melihat, mengedit, dan men
 Tujuan dari proyek ini adalah untuk memahami dasar pembuatan aplikasi CRUD berbasis web.
 
 Demo aplikasi:  
-[!Vercel]{https://testabs.vercel.app/}
+[Vercel](https://testabs.vercel.app/)
 
 ---
 
