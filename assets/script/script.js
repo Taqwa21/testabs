@@ -1,6 +1,6 @@
 /* assets/script/script.js */
 (function () {
-  const STORAGE_KEY = "contacts_app_v1";
+  const STORAGE_KEY = "contacts_test_v1";
 
   // Inisialisasi default contacts jika belum ada
   function ensureDefaultContacts() {
@@ -105,6 +105,16 @@
           email: "violet@leidenschaf.jp",
           location: "Leiden",
           notes: "Auto Memory Doll",
+          created_at: now,
+          updated_at: now,
+        },
+        {
+          id: 11,
+          fullname: "Hanabi Yasuraoka",
+          phone: "080555444333",
+          email: "HanaYasu@kuzhon.jp",
+          location: "Tokyo",
+          notes: "Dev Wife",
           created_at: now,
           updated_at: now,
         },
