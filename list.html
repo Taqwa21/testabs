@@ -1,0 +1,98 @@
+<!-- list.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kontak App — Daftar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-100 p-6">
+    <div class="max-w-6xl mx-auto">
+      <header class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-semibold">Daftar Kontak</h1>
+        <div class="space-x-3">
+          <a
+            href="add.html"
+            class="px-4 py-2 bg-green-600 text-white rounded-lg"
+            >Tambah Kontak</a
+          >
+          <a href="index.html" class="px-4 py-2 border rounded-lg">Menu</a>
+        </div>
+      </header>
+
+      <section
+        class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+      >
+        <div class="flex items-center gap-2">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Cari nama atau telepon..."
+            class="px-4 py-2 rounded-lg border w-80"
+          />
+          <button id="clearSearch" class="px-3 py-2 border rounded-lg">
+            Clear
+          </button>
+        </div>
+        <div class="text-sm text-gray-500" id="contactCount">Memuat...</div>
+      </section>
+
+      <section id="listContainer" class="space-y-4">
+        <!-- Daftar kontak akan dirender di sini -->
+      </section>
+    </div>
+
+    <!-- Detail Modal -->
+    <div
+      id="detailModal"
+      class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center p-4"
+    >
+      <div class="bg-white rounded-lg max-w-lg w-full p-6 relative">
+        <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-500">
+          Tutup
+        </button>
+        <h2 class="text-xl font-semibold mb-4">Detail Kontak</h2>
+        <div id="detailContent" class="space-y-2 text-sm text-gray-700"></div>
+        <div class="mt-4 text-right">
+          <button id="closeModalBtn2" class="px-4 py-2 border rounded-lg">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/script/script.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // render awal
+        renderContactList();
+
+        const searchInput = document.getElementById("searchInput");
+        const clearSearch = document.getElementById("clearSearch");
+
+        searchInput.addEventListener("input", () => {
+          renderContactList(searchInput.value.trim());
+        });
+
+        clearSearch.addEventListener("click", () => {
+          searchInput.value = "";
+          renderContactList();
+        });
+
+        // modal close bindings
+        document
+          .getElementById("closeModalBtn")
+          .addEventListener("click", closeDetailModal);
+        document
+          .getElementById("closeModalBtn2")
+          .addEventListener("click", closeDetailModal);
+        document
+          .getElementById("detailModal")
+          .addEventListener("click", (e) => {
+            if (e.target.id === "detailModal") closeDetailModal();
+          });
+      });
+    </script>
+  </body>
+</html>

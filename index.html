@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kontak App — Menu</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
+      <h1 class="text-2xl font-semibold mb-6 text-center">
+        Aplikasi Kontak Sederhana
+      </h1>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a
+          href="list.html"
+          class="block text-center py-8 px-4 rounded-xl border-2 border-dashed hover:border-solid transition"
+        >
+          <div class="text-xl font-medium">Lihat Data Kontak</div>
+          <p class="text-sm text-gray-500 mt-2">
+            Menampilkan semua kontak yang tersimpan
+          </p>
+        </a>
+
+        <a
+          href="add.html"
+          class="block text-center py-8 px-4 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
+        >
+          <div class="text-xl font-medium">Tambah Data Kontak</div>
+          <p class="text-sm mt-2 opacity-90">
+            Tambahkan kontak baru ke penyimpanan lokal
+          </p>
+        </a>
+      </div>
+
+      <p class="text-xs text-gray-400 mt-6 text-center">
+        Disimpan di localStorage — demo tanpa server
+      </p>
+    </div>
+  </body>
+</html>

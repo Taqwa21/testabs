@@ -1,0 +1,148 @@
+<!-- edit.html -->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kontak App — Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-50 p-6">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
+      <h1 class="text-xl font-semibold mb-4">Edit Kontak</h1>
+
+      <form id="contactForm" class="space-y-4">
+        <input type="hidden" id="contactId" />
+        <div>
+          <label class="block text-sm">Nama Lengkap *</label>
+          <input
+            id="fullname"
+            name="fullname"
+            type="text"
+            required
+            class="w-full px-3 py-2 border rounded-lg"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm">Telepon *</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            inputmode="numeric"
+            class="w-full px-3 py-2 border rounded-lg"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="w-full px-3 py-2 border rounded-lg"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm">Lokasi</label>
+          <input
+            id="location"
+            name="location"
+            type="text"
+            class="w-full px-3 py-2 border rounded-lg"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm">Catatan</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="3"
+            class="w-full px-3 py-2 border rounded-lg"
+          ></textarea>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            type="submit"
+            class="px-5 py-2 bg-blue-600 text-white rounded-lg"
+          >
+            Perbarui
+          </button>
+          <a href="list.html" class="px-4 py-2 border rounded-lg">Batal</a>
+        </div>
+
+        <p id="formMsg" class="text-sm text-red-600 hidden"></p>
+      </form>
+    </div>
+
+    <script src="assets/script/script.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(location.search);
+        const id = params.get("id");
+        const msg = document.getElementById("formMsg");
+
+        if (!id) {
+          // jika tidak ada id, kembali ke list
+          window.location.href = "list.html";
+          return;
+        }
+
+        const contact = getContactById(Number(id));
+        if (!contact) {
+          window.location.href = "list.html";
+          return;
+        }
+
+        // isi form
+        document.getElementById("contactId").value = contact.id;
+        document.getElementById("fullname").value = contact.fullname || "";
+        document.getElementById("phone").value = contact.phone || "";
+        document.getElementById("email").value = contact.email || "";
+        document.getElementById("location").value = contact.location || "";
+        document.getElementById("notes").value = contact.notes || "";
+
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          msg.classList.add("hidden");
+
+          const newData = {
+            fullname: document.getElementById("fullname").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            location: document.getElementById("location").value.trim(),
+            notes: document.getElementById("notes").value.trim(),
+          };
+
+          if (!newData.fullname) {
+            msg.textContent = "Nama lengkap wajib diisi.";
+            msg.classList.remove("hidden");
+            return;
+          }
+          if (!/^\d+$/.test(newData.phone)) {
+            msg.textContent = "Telepon harus berisi angka saja.";
+            msg.classList.remove("hidden");
+            return;
+          }
+          if (
+            newData.email &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newData.email)
+          ) {
+            msg.textContent = "Format email tidak valid.";
+            msg.classList.remove("hidden");
+            return;
+          }
+
+          updateContact(Number(id), newData);
+          window.location.href = "list.html";
+        });
+      });
+    </script>
+  </body>
+</html>
